@@ -1,7 +1,7 @@
 import os, requests, json, csv, sys, json
 
 sentences = []
-with open('economic_news/titles.lst','rb') as f:
+with open('tests/titles.lst','rb') as f:
     for i, line in enumerate(f):
         tt = line.strip().decode('utf8')
         sentences.append(tt)
