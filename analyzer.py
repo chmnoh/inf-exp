@@ -18,18 +18,18 @@ def eval_tones(rec):
         if ret['classes'][i] == 'incr-future':
             rec['up'] += 1
         elif ret['classes'][i] == 'incr-present':
-            rec['up'] += 1
+            rec['up'] += 0
         elif ret['classes'][i] == 'decr-future':
             rec['down'] += 1
         elif ret['classes'][i] == 'decr-present':
-            rec['down'] += 1
+            rec['down'] += 0
         else:
             pass
     rec['s1'] = rec['up'] - rec['down']
     rec['s4'] = math.log(rec['up']+1) - math.log(rec['down']+1)
 
 if __name__ == '__main__':
-    dump_dir = "./news_dump/tab/0000"
+    dump_dir = "../models/news_dump/tab/0000"
     files = os.listdir(dump_dir)
     files.sort()
     tags = ["`pk'", "`dt'", "`ur'", "`tt'", "`bd'"]
